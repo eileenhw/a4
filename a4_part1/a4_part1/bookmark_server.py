@@ -33,6 +33,7 @@ class ICSHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
 
         # we'll, perhaps unsafely, assume that we have a valid message if
         # data exists in pos 1 of msg parts.
+        #print(msg["data"]) #delete
         if len(msg['data'])>0:
             self.add_bookmark(msg['data'][0])
             self.wfile.write("ok".encode(encoding = 'utf-8'))
